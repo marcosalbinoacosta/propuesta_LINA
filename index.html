@@ -97,11 +97,11 @@
 
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="container mx-auto flex items-center justify-between p-4 px-6">
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 max-w-[75%]"> <!-- Added max-w-[75%] to control the title width on mobile -->
                 <!-- El logo cargará desde una URL externa ya proporcionada -->
                 <img src="https://i.postimg.cc/vmf8thZ5/Gemini-Generated-Image-8n9oev8n9oev8n9o.png" alt="Logo +LATINA" class="h-8 md:h-10"/>
-                <div class="text-3xl font-extrabold text-[#4A0769]">
-                    <span class="font-normal text-neutral-600 text-xl">| </span>
+                <div class="text-3xl font-extrabold text-[#4A0769] leading-none"> <!-- Added leading-none -->
+                    +LATINA <span class="font-normal text-neutral-600 text-xl block md:inline-block">| Propuesta IA</span> <!-- Added block on mobile for better wrapping -->
                 </div>
             </div>
             <div class="hidden md:flex space-x-6">
@@ -134,7 +134,8 @@
                 <p class="text-xl md:text-2xl text-neutral-700 mb-8">
                     Una propuesta para profesionalizar el soporte técnico de +LATINA, habilitando la trazabilidad total y la gestión por KPIs mediante WhatsApp.
                 </p>
-                <a href="#demo" id="demoButton" class="bg-[#8F3BA3] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#4A0769] transition duration-300 shadow-lg">
+                <!-- KEY FIX: Added block and mx-auto for mobile centering and fluid width -->
+                <a href="#demo" id="demoButton" class="bg-[#8F3BA3] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#4A0769] transition duration-300 shadow-lg inline-block mx-auto w-fit"> 
                     Ver Demostración Interactiva
                 </a>
             </div>
@@ -154,7 +155,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-500">
                     <span class="text-3xl">⚠️</span>
                     <h3 class="text-xl font-semibold my-2">Sin Métricas (KPIs)</h3>
-                    <p class="text-neutral-600">Imposibilidad de medir indicadores clave del servicio técnico.</p>
+                    <p class="text-neutral-600">Impossibilidad de medir indicadores clave del servicio técnico.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
                     <span class="text-3xl">🔁</span>
@@ -534,5 +535,4 @@
     </script>
 </body>
 </html>
-
 
