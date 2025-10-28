@@ -36,28 +36,28 @@
         @keyframes pulse-fast { 50% { opacity: .6; } }
         .animate-pulse-fast { animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) 1; }
         
-        /* ESTILOS WHATSAPP-LIKE MEJORADOS (Fondo con patrón) */
+        /* ESTILOS WHATSAPP CLÁSICOS */
         .chat-window {
-            /* Simulación del patrón de fondo de WhatsApp Web */
+            /* Fondo con patrón de WhatsApp Web */
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/W_Wallpaper_Pattern.svg/100px-W_Wallpaper_Pattern.svg.png');
             background-repeat: repeat;
-            background-size: 100px; /* Tamaño del patrón */
-            background-color: #E6E0D7; /* Color base del fondo de chat claro */
+            background-size: 100px; 
+            background-color: #E6E0D7; /* Gris sutil de WhatsApp Web */
             overflow-y: scroll;
             border: none;
         }
-        /* Burbuja del USUARIO (Derecha/Outgoing) - Púrpura Claro */
+        /* Burbuja del USUARIO (Derecha/Outgoing) - VERDE DE WHATSAPP */
         .chat-bubble-user {
-            background-color: #CB88C7; /* Púrpura claro, color del usuario según paleta */
+            background-color: #DCF8C6; /* Verde clásico de WhatsApp */
             color: #1f2937;
             border-radius: 10px 10px 0 10px; 
             box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13); 
             padding: 9px 12px; 
             max-width: 75%;
             word-wrap: break-word;
-            font-size: 0.95rem; /* Ajuste de fuente para parecer más chat */
+            font-size: 0.95rem; 
         }
-        /* Burbuja del AGENTE (Izquierda/Incoming) - Blanco */
+        /* Burbuja del AGENTE (Izquierda/Incoming) - Blanco/Gris Claro */
         .chat-bubble-agent {
             background-color: #ffffff; 
             color: #1f2937;
@@ -66,7 +66,7 @@
             padding: 9px 12px; 
             max-width: 75%;
             word-wrap: break-word;
-            font-size: 0.95rem; /* Ajuste de fuente para parecer más chat */
+            font-size: 0.95rem; 
         }
         /* Estilo para el input de mensaje (Barra redondeada) */
         #demoInput {
@@ -74,11 +74,15 @@
             background-color: white;
             padding: 10px 16px; 
             font-size: 1rem;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra sutil como el input real */
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
         }
         /* Contenedor del chat con sombra para mejor separación */
         .chat-container-wrapper {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        /* Botón de Enviar (Flecha a la derecha) - Verde de WhatsApp */
+        #sendDemoMessage {
+            background-color: #075E54; /* Verde oscuro de WhatsApp */
         }
     </style>
 </head>
@@ -176,9 +180,13 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     
                     <div class="bg-white rounded-lg overflow-hidden chat-container-wrapper">
-                        <div class="bg-[#4A0769] text-white p-3 font-bold flex items-center space-x-2 shadow-md">
-                            <span class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#4A0769] font-bold text-xl">L</span>
-                            <span>Agente LINA (Soporte)</span>
+                        <!-- CABECERA DE CHAT WHATSAPP: BLANCA -->
+                        <div class="bg-white text-neutral-800 p-3 font-bold flex items-center space-x-2 shadow-md border-b border-neutral-200">
+                            <span class="w-10 h-10 bg-[#4A0769] rounded-full flex items-center justify-center text-white font-bold text-xl">L</span>
+                            <div>
+                                <span>Agente LINA</span>
+                                <p class="text-xs font-normal text-neutral-500">Soporte Técnico +LATINA</p>
+                            </div>
                         </div>
                         <div id="chatWindow" class="p-4 h-96 space-y-3 chat-window">
                             <div class="flex justify-start">
@@ -190,9 +198,10 @@
                         <!-- BARRA DE ENTRADA SIMULANDO WHATSAPP -->
                         <div class="p-2 bg-neutral-100 relative flex items-center border-t border-neutral-200">
                             <input type="text" id="demoInput" value="No puedo imprimir en la impresora de Administración" class="flex-grow rounded-full p-2.5 px-4 mr-2 shadow-inner border border-transparent focus:outline-none focus:ring-2 focus:ring-[#8F3BA3]" readonly>
-                            <button id="sendDemoMessage" class="bg-[#8F3BA3] text-white w-10 h-10 rounded-full hover:bg-[#4A0769] transition duration-300 flex items-center justify-center shadow-md">
-                                <!-- Icono de Enviar (Send) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 00.187.859A.997.997 0 003 18h14a1 1 0 00.91-1.47l-7-14z"/></svg>
+                            <!-- BOTÓN DE ENVIAR: VERDE Y FLECHA BLANCA -->
+                            <button id="sendDemoMessage" class="bg-[#075E54] w-10 h-10 rounded-full hover:bg-green-700 transition duration-300 flex items-center justify-center shadow-md text-white">
+                                <!-- Ícono de flecha a la derecha (Send) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
                             </button>
                         </div>
                     </div>
@@ -390,7 +399,7 @@
                 if(!userText) return;
 
                 sendBtn.disabled = true;
-                sendBtn.innerHTML = '<svg class="w-5 h-5 animate-spin mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m15.356 2H18a8.001 8.001 0 01-15.356 2M4 12v5h.582m15.356 2A8.001 8.001 0 004.582 9m15.356 2H18a8.001 8.001 0 01-15.356 2"></path></svg>';
+                sendBtn.innerHTML = '<svg class="w-5 h-5 animate-spin mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m15.356 2H18a8.001 8.001 0 01-15.356 2M4 12v5h.582m15.356 2A8.001 8.001 0 004.582 9m15.356 2H18a8.001 8.001 0 01-15.356 2"></path></svg>';
                 
                 // Mensaje del USUARIO
                 const userMsg = document.createElement('div');
@@ -433,7 +442,7 @@
                         }
                         
                         sendBtn.disabled = false;
-                        sendBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 00.187.859A.997.997 0 003 18h14a1 1 0 00.91-1.47l-7-14z"/></svg>';
+                        sendBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>';
 
                     }, 4000); // Simula el tiempo de resolución
 
@@ -525,4 +534,5 @@
     </script>
 </body>
 </html>
+
 
